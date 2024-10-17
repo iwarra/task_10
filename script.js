@@ -14,7 +14,11 @@ function getApi() {
 		})
 		.then((data) => {
 			const creature = data.result[0];
-			result.innerText = `${name} has height: ${creature.properties.height}, mass: ${creature.properties.mass}, hair color: ${creature.properties.hair_color} and is ${creature.properties.gender}.`;
+			if (creature == undefined) {
+				result.innerText = 'No creature found with that name. Please try again.';
+			} else {
+				result.innerText = `${name} has height: ${creature.properties.height}, mass: ${creature.properties.mass}, hair color: ${creature.properties.hair_color} and is ${creature.properties.gender}.`;
+			}
 			input.value = '';
 		})
 		.catch((err) => console.log(err));
