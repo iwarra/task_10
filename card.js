@@ -4,14 +4,15 @@ class Card {
 	uri = 'https://deckofcardsapi.com/api/deck/new/draw/?count=1';
 
 	async fetchCard() {
-		let response = await fetch(this.uri);
-		let card = await response.json();
-		if (card.success) {
-			const imageUrl = card.cards[0].image;
-		} else {
-			console.log('Card not found.');
+		try {
+			let response = await fetch(this.uri);
+			if (!response.ok) throw new Error('Error fetching data: ' + response.status);
+
+			let card = await response.json();
+			return card.cards[0].image;
+		} catch (error) {
+			console.log(error);
 		}
-		return imageUrl;
 	}
 
 	async updateCardUI() {
