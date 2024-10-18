@@ -17,6 +17,7 @@ async function fetchCard() {
 
 function updateUI(data) {
 	const cardHolder = document.querySelector('#cardHolder');
+	cardHolder.innerHTML = '';
 	let img = document.createElement('img');
 	img.src = data;
 	cardHolder.appendChild(img);
