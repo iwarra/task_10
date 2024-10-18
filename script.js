@@ -1,4 +1,4 @@
-import drawCard from './card.js';
+import Card from './card.js';
 import getApi from './starwars.js';
 
 /////Part 1
@@ -10,7 +10,8 @@ infoButton.addEventListener('click', (e) => {
 
 ///////Part 2
 const cardButton = document.querySelector('#drawBtn');
+const card = new Card();
 cardButton.addEventListener('click', async (e) => {
 	e.preventDefault();
-	await drawCard();
+	await card.updateCardUI();
 });
