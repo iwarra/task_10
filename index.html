@@ -7,29 +7,44 @@
 			content="width=device-width, initial-scale=1.0" />
 		<title>Task 10</title>
 	</head>
-	<body>
+	<body style="display: flex; flex-direction: column; gap: 2rem; padding-inline: 3rem">
 		<header></header>
 		<main>
 			<h1>Task 10</h1>
-			<div>
+			<section style="display: flex; flex-direction: column; gap: 1rem">
 				<h2>Part 1</h2>
-				<form action="">
+				<form>
 					<input
 						type="text"
-						name=""
+						style="padding: 0.3rem"
 						id="name" />
-					<button id="button">Add</button>
+					<button
+						id="getInfoBtn"
+						style="padding: 0.3rem">
+						Get info
+					</button>
 				</form>
 				<div
 					id="nameError"
 					style="color: red"></div>
 				<textarea
-					name=""
+					style="max-width: 300px"
 					id="result"
 					rows="5"></textarea>
-			</div>
+			</section>
+			<section style="display: flex; flex-direction: column; gap: 1rem">
+				<h2>Part 2</h2>
+				<button
+					id="drawBtn"
+					style="align-self: self-start; padding: 0.3rem">
+					Show a card
+				</button>
+				<div id="cardHolder"></div>
+			</section>
 		</main>
 		<footer></footer>
-		<script src="script.js"></script>
+		<script
+			type="module"
+			src="script.js"></script>
 	</body>
 </html>
